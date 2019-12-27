@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: install webserver on ub16
+    apt: 
+     name: apche2
+     state: present
+    when: ansible_os_family=="Debian"
+  - name: start ubuntu on ub16
+    service: 
+     name: apache2
+     state: started
+    when: ansible_os_family=="Debian"
+
