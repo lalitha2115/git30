@@ -1,0 +1,5 @@
+---
+- hosts: all
+  service:
+   name: apche2
+   state: started
